@@ -1,4 +1,5 @@
-# Hosted Link - pokedex-by-aman.web.app
+# Hosted Link - 
+[https://pokedex-by-aman.web.app](https://pokedex-by-aman.web.app)
 
 A Pokedex Web app made with ReactJS that has searching and filtering capabilities.
 The data is fetched from `https://pokeapi.co/`.
