@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+* {box-sizing: border-box; margin: 0; padding: 0;}
+.container {
+  display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #efefbb; background: linear-gradient(to right, #d4d3dd, #efefbb); width: 100%; overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.back-route {
+  width: fit-content; margin: 0 auto; cursor: pointer;
+}
+h1 {
+  text-align: center; width: fit-content; margin-bottom: 50px; letter-spacing: 8px; font-size: 40px; font-style: italic; font-weight: 800; z-index: 20;
+}
+h1.background-header {
+  position: absolute; font-size: 60px; color: rgba(0, 0, 0, 0.09); left: 0%; top: 38px; letter-spacing: 10px; font-weight: 800; width: fit-content; left: 50%; transform: translate(-50%,0); z-index: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/******************* POKEDEX PAGE *******************/
+
+.pokedex-container {
+  margin: 60px auto; text-align: center; min-height: calc(100vh - 120px); width: 95vw; overflow-x: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+.poke-grid {
+  display: flex; flex-wrap: wrap; justify-content: space-evenly; align-items: center; max-width: 1200px; margin: 50px auto 50px; padding: 0 50px; overflow-x: hidden;
+}
+.poke-card {
+  margin: 10px; width: fit-content; padding: 20px; border-radius: 10px; box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1); cursor: pointer;
+}
+.poke-card .img-container {
+  background-color: #fff6; border-radius: 50%; width: 120px; height: 120px; text-align: center; margin: 0 auto;
+}
+.poke-card .img-container img {
+  height: 100%; 
 }
 
-.App-link {
-  color: #61dafb;
+.poke-card .info {
+  margin-top: 10px; font-weight: 500;
+}
+.poke-card .info .number {
+  background: rgb(0,0,0,0.1); padding: 5px 10px; border-radius: 10px; font-size: 0.8em; 
+}
+.poke-card .info .name {
+  margin-top: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-bar {
+  width: 50%; max-width: 500px; display: flex; justify-content: space-between; margin: 0 auto; height: 40px;
 }
+.search-bar .MuiInputBase-root {
+  height: 40px; font-weight: 500; text-align: left;
+}
+.search-bar .MuiFormLabel-root {margin-top: -8px;}
+.search-bar .search-term {
+  width: 50%;
+}
+.search-bar .search-type {
+  width: 30%;
+}
+.search-bar .MuiButtonBase-root { /* background: #7f78c7; */ font-size: 1.2em; color: #000;}
+/* .search-bar .MuiButtonBase-root:hover { background: #657b3d;} */
+
+
+
+
+
+/******************* POKEMON PAGE *******************/
+
+
+
+.card-container {width: 95%; min-height: calc(100vh - 120px); cursor: default;}
+.card-container .card {
+  display: flex; justify-content: space-between; font-size: 1.5rem; width: 100%; max-width: 1100px; margin: 0 auto; padding: 50px 100px; max-height: 800px; border-radius: 10px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.1); 
+}
+.card-container .left {
+  width: 42%; 
+}
+.card-container .top img {
+  width: 100%; border: 4px solid #000; border-radius: 50%; background: #fff; box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.4); 
+}
+.card-container .id {
+  position: relative; text-align: center; background: #fff; width: 80px; height: 40px; display: flex; align-items: center; justify-content: center; margin: -30px auto 0; border-radius: 15px; border: 4px solid #000; font-weight: 800; box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1), 0 3px 12px rgba(0, 0, 0, 0.4); cursor: pointer;
+}
+.card-container .name {
+  text-align: center; font-size: 40px; font-weight: 800; margin-top: 30px; 
+}
+
+.card-container .bottom {margin-bottom: 20px;}
+
+.card-container .poke-type {
+  display: flex; min-height: 45px; align-items: center; margin: 15px 0; justify-content: flex-start; flex-wrap: wrap;
+}
+.card-container .type-chip {
+  display: flex; align-items: flex-start; justify-content: center; background: #fff; padding: 3px 15px 7px; border-radius: 20px; margin: 5px; font-size: 20px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: 600; cursor: pointer;
+}
+
+.card-container .right {
+  width: 52%; display: flex; flex-direction: column; justify-content: space-between; padding-top: 10px;
+}
+.card-container .ability-container {display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap;}
+
+.card-container .description {font-size: 18px; text-align: justify;}
+
+
+.card-container .stats {
+  display: grid; grid-template-columns: 100%; width: 100%; row-gap: 20px;
+}
+.card-container .stat {width: 100%; height: fit-content; }
+/* .stat .left {width: 72%; display: flex; align-items: flex-start; flex-direction: column; justify-content: center;} */
+.card-container .stat .left {width: 100%; display: flex; align-items: flex-start; flex-direction: row; justify-content: center;}
+.card-container .stat .left .stat-name {width: 30%;}
+
+.card-container .stat .right {width: 28%; display: flex; align-items: flex-end; justify-content: flex-end; font-size: 30px; letter-spacing: normal; font-weight: bold; }
+
+.card-container .stat-value-container {width: 70%; background: #fff; border-radius: 15px; height: 20px; position: relative; }
+.card-container .stat-value {background: #485; border-radius: 15px; height: 20px; }
+.card-container .stat-name {text-transform: uppercase; font-size: 17px; letter-spacing: 1.25px; font-weight: 600; margin-left: 0px; margin-bottom: 5px;}
+.card-container .stat-border {border-radius: 15px; height: 20px; border: 2px solid #000; width: 100%; background: transparent; position: absolute; }
+
+.card-container .abilities {display: flex; flex-wrap: wrap;}
+
+.card-container .normal-chip {display: flex; align-items: flex-start; justify-content: center; background: #fff; padding: 3px 15px 7px; border-radius: 20px; margin: 5px 10px 5px 0; font-size: 20px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: 600;  cursor: pointer;
+}
+.card-container .hidden-chip {display: flex; align-items: flex-start; justify-content: center; background: rgb(89, 87, 87); padding: 3px 15px 7px; border-radius: 20px; margin: 5px 10px 5px 0; color: #fff; font-size: 20px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); font-weight: 600; cursor: pointer;
+}
+
+.card-container .evolution-pokemons {flex-wrap: wrap;}
+.card-container .evolution {
+  display: flex; justify-content: center; align-items: flex-end; margin-right: 10px;
+}
+
+
+
+.footer { text-align: center; margin: 100px auto 0;}
+.footer a {font-size: 1.2em; color: rgba(0, 0, 0, 0.4); text-decoration: none;}
+
+
+.header {font-size: 25px; font-weight: 700; margin-right: 25px;}
+.flex {display: flex;}
+.flex-column {flex-direction: column;}
+.justify-between {justify-content: space-between;}
+.w80 {width: 80%;}
+.bold {font-weight: bold;}
