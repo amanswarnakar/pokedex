@@ -1,3 +1,8 @@
+# Hosted Link - pokedex-by-aman.web.app
+
+A Pokedex Web app made with ReactJS that has searching and filtering capabilities.
+The data is fetched from `https://pokeapi.co/`.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
