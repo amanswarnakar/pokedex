@@ -54,7 +54,7 @@ const Pokedex = () => {
     setFilteredPokemons(
       pokemons.sort((p1, p2) => (p1.id > p2.id ? 1 : p1.id < p2.id ? -1 : 0))
     );
-  }, [pokemons?.length, refresh]);
+  }, [pokemons?.length]);
 
   const goToHomePage = () => {
     navigate("/pokedex/", { replace: true });
@@ -149,9 +149,9 @@ const Pokedex = () => {
   }, [search]);
 
 
-  useEffect(() => {
-    setRefresh(prev => !prev);
-  }, [searchTerm, search])
+  // useEffect(() => {
+  //   setRefresh(prev => !prev);
+  // }, [searchTerm, search])
   
 
   // console.log(filteredPokemons);
@@ -204,9 +204,7 @@ const Pokedex = () => {
       </div>
       <div className="poke-grid">
         {filteredPokemons?.length == 0 && <h2>No Pokémons to display.</h2>}
-        {refresh ? filteredPokemons.map((pokemon) => {
-          return <Card key={pokemon.id} details={pokemon} />;
-        }) : pokemons.map((pokemon) => {
+        {filteredPokemons.map((pokemon) => {
           return <Card key={pokemon.id} details={pokemon} />;
         })}
       </div>
